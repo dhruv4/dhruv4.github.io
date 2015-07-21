@@ -1,0 +1,12 @@
+header, main, footer {
+	padding-left: 240px;
+}
+.waves-effect.waves-blue .waves-ripple {
+	background-color: rgba(33, 150, 243, 0.65);
+}
+.table-of-contents li a.active {
+	border-left: 2px solid rgb(33, 150, 243) !important;
+}
+.table-of-contents li a:hover {
+	border-left: 1px solid rgb(33, 150, 243) !important;
+}
