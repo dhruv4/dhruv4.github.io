@@ -10,6 +10,3 @@ header, main, footer {
 .table-of-contents li a:hover {
 	border-left: 1px solid rgb(33, 150, 243) !important;
 }
-.header {
-	font-weight: normal;
-}
