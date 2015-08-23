@@ -1,6 +1,10 @@
 header, main, footer {
 	padding-left: 240px;
 }
+#head-section {
+	padding-left: 50px;
+	padding-right: 50px;
+}
 @media only screen and (max-width : 992px) {
 	header, main, footer {
 	  padding-left: 0;
