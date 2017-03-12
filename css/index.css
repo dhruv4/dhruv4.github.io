@@ -1,5 +1,5 @@
 header, main, footer {
-	padding-left: 240px;
+	padding-left: 300px;
 }
 #head-section {
 	padding-left: 50px;
@@ -23,6 +23,10 @@ header, main, footer {
 }
 .table-of-contents li a:hover {
 	border-left: 1px solid rgb(33, 150, 243) !important;
+}
+div.collapsible-body {
+	padding-top: 0;
+	padding-bottom: 0;
 }
 .collapsible-body .collection {
 	margin: 0;
