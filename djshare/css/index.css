@@ -1,0 +1,53 @@
+#logo	{
+	margin-top: 1vh;
+	height: 45px;
+}
+.modal {
+	max-height: 80% !important;
+}
+li.indicator-item.active {
+	background-color: #ef6c00 !important;
+}
+#upnext	{
+	height: 200px;
+	overflow: auto;
+}
+#playlist-name {
+	margin: 0;
+}
+#up-next-name {
+	margin: 0;
+	margin-bottom: 15px;
+}
+#code-card	{
+	margin-bottom: 0;
+}
+#music-control	{
+	text-align: center;
+	padding-top: 5%;
+}
+.search-li, .play-li	{
+	position: relative;
+}
+.search-buttons, .remove	{
+	position: absolute;
+	top: 2px;
+	right: 20px;
+}
+#search-results	{
+	display: none; 
+	max-height: 23vh; 
+	overflow: auto;
+}
+.error {
+	color: red;
+}
+#isDJ {
+	float: right;
+	font-size: 46px;
+}
+#qrcode {
+	float: right;
+	margin-right: 15px;
+	padding: 20px;
+}
