@@ -1,0 +1,75 @@
+<!--add.html-->
+
+<head>
+	<!-- RSVP -->
+	<script src="rsvp.min.js"></script>
+	<!-- Firebase -->
+	<script src="https://cdn.firebase.com/js/client/2.2.6/firebase.js"></script>
+	<script src="https://cdn.firebase.com/libs/geofire/3.2.2/geofire.min.js"></script>
+</head>
+<body>
+
+	<input id="lat" type="number" placeholder="lat">
+	<input id="long" type="number" placeholder="lng">
+	<input id="name" type="text" placeholder="name">
+	<textarea id="description" placeholder="desc"></textarea>
+	<input id="address" type="text" placeholder="address">
+	<input id="type" type="text" placeholder="type">
+	<button onclick="clicked()">Submit</button>
+	<!--button onclick="addReview()">Review</button-->
+	
+</body>
+<script type="text/javascript">
+
+	var myDataRef = new Firebase("https://vendnow.firebaseio.com/");
+	var geoFire = new GeoFire(myDataRef.child("_geofire"));
+
+	function makeid()
+	{
+	    var text = "";
+	    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+	    for( var i=0; i < 14; i++ )
+	        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+	    return text;
+	}
+
+	function clicked(){
+
+		key = makeid();
+
+		myDataRef.child(key).set({ key: key, name: document.getElementById("name").value, description: document.getElementById("description").value, address: document.getElementById("address").value, type: document.getElementById("type").value, report: 0, lat: parseFloat(document.getElementById("lat").value), lng: parseFloat(document.getElementById("long").value), restricted: true, avgrating: 0, numberofreviews: 0});
+
+		console.log([parseFloat(document.getElementById("lat").value), parseFloat(document.getElementById("long").value)]);
+
+		geoFire.set(key, [parseFloat(document.getElementById("lat").value), parseFloat(document.getElementById("long").value)]).then(function() {
+		  console.log("Provided key has been added to GeoFire");
+		}, function(error) {
+		  console.log("Error: " + error);
+		});
+		//myDataRef.child("vends").set();
+		/*
+		    Marker set as type of vend
+			Infowindow - address, description, type of machine, get directions (switch between walk and drive in directionsDisplay), report if broken or something
+	    */
+
+	}
+	/*
+	function addReview(){
+
+		myDataRef.once("value", function(dataSnapshot){
+
+			dataSnapshot.forEach(function(childSnapshot){
+				childSnapshot.ref().update({"avgrating": 0, "numberofreviews": 0});
+			});
+
+		});
+
+		console.log(myDataRef);
+
+		myDataRef.child("1bNYt9nWUbCD7F").update({"avgrating": 0, "numberofreviews": 0});
+
+	}*/
+
+</script>
