@@ -17,9 +17,6 @@ export type NavigationItem = {
 export const navigation: NavigationItem[] = [
   { label: "Work Experience", href: "#work" },
   { label: "Education", href: "#education" },
-  { label: "Technical Skills", href: "#tech-skills" },
   { label: "Apps", href: "#apps" },
-  { label: "Extra Curriculars", href: "#ecs" },
   { label: "Research", href: "#research" },
-  { label: "Patents", href: "#patents" },
 ];

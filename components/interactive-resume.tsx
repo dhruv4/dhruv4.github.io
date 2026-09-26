@@ -10,10 +10,19 @@ export function InteractiveResume({ html }: { html: string }) {
     if (!container) return;
 
     const activators = container.querySelectorAll<HTMLElement>(".activator");
+    const revealTitles = container.querySelectorAll<HTMLElement>(".card-reveal .card-title");
     const collapsibleHeaders = container.querySelectorAll<HTMLElement>(".collapsible-header");
+    container.querySelectorAll<HTMLElement>(".material-icons").forEach((icon) => {
+      icon.setAttribute("aria-hidden", "true");
+    });
     activators.forEach((activator) => {
       activator.tabIndex = 0;
       activator.setAttribute("role", "button");
+    });
+    revealTitles.forEach((title) => {
+      title.tabIndex = 0;
+      title.setAttribute("role", "button");
+      title.setAttribute("aria-label", "Close details");
     });
     collapsibleHeaders.forEach((header) => {
       header.tabIndex = 0;
@@ -40,7 +49,7 @@ export function InteractiveResume({ html }: { html: string }) {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key !== "Enter" && event.key !== " ") return;
       const target = event.target as HTMLElement;
-      if (target.matches(".activator, .collapsible-header")) {
+      if (target.matches(".activator, .card-reveal .card-title, .collapsible-header")) {
         event.preventDefault();
         activate(target);
       }

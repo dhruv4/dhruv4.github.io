@@ -275,7 +275,17 @@ img { max-width: 100%; }
 .card-title.activator:focus-visible, .card-image .activator:focus-visible,
 .collapsible-header:focus-visible { outline: 3px solid rgba(33, 150, 243, .45); outline-offset: -3px; }
 .card-title .material-icons { color: var(--blue); font-family: inherit; font-size: 0 !important; }
-.card-title .material-icons::after { content: "⌃"; font-size: 30px; line-height: 1; }
+.card-content .card-title .material-icons::after {
+  content: "Details";
+  display: inline-block;
+  padding: 4px 7px;
+  border: 1px solid #90caf9;
+  border-radius: 999px;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  line-height: 1;
+}
 .card-reveal .card-title .material-icons::after { content: "×"; color: #424242; }
 .card-content > a, .card-content p a { overflow-wrap: anywhere; }
 .card-reveal {
