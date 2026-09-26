@@ -22,14 +22,14 @@ export function Hero() {
           <a href={profile.linkedin} target="_blank" rel="noreferrer">www.linkedin.com/in/dhruv4</a>
           <a href={profile.twitter} target="_blank" rel="noreferrer">www.twitter.com/iamdhruv4</a>
         </div>
-        <div className="hero__intro">
-          <p>
-            BD at <a href="https://www.zoba.com">Zoba</a>. Co-Founder at{" "}
-            <a href="https://www.votemegaphone.org">Megaphone</a>
-          </p>
-          <p>Urban Mobility, Technology, and Politics.</p>
-          <p>Harvard, YC Alum.</p>
-        </div>
+      </div>
+      <div className="hero__intro">
+        <p>
+          BD at <a href="https://www.zoba.com">Zoba</a>. Co-Founder at{" "}
+          <a href="https://www.votemegaphone.org">Megaphone</a>
+        </p>
+        <p>Urban Mobility, Technology, and Politics.</p>
+        <p>Harvard, YC Alum.</p>
       </div>
     </section>
   );

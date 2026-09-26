@@ -21,4 +21,4 @@ Open `http://localhost:3000`.
 
 ## Build and deploy
 
-`npm run build` creates a fully static site in `out/`. The GitHub Actions workflow deploys that directory to GitHub Pages whenever `master` changes. Keep the repository's Pages source set to **GitHub Actions**.
+`npm run build` creates a fully static site in `out/`. The GitHub Actions workflow deploys that directory to GitHub Pages whenever `main` changes. Keep the repository's Pages source set to **GitHub Actions**.
