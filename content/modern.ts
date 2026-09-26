@@ -54,36 +54,4 @@ export const projects = [
     description: "A command-line tool for sending large files with one command.",
     href: "https://www.bhej.dev",
   },
-  {
-    name: "VendNow",
-    description: "A web application for finding nearby vending machines.",
-    href: "/vendnow/",
-  },
-  {
-    name: "DJ Share",
-    description: "Collaborative playlists and shared DJ events.",
-    href: "/djshare/",
-  },
-] as const;
-
-export const research = [
-  {
-    name: "Bike-Sharing Is Transit",
-    description: "Tools for planning and optimizing bike-sharing networks.",
-  },
-  {
-    name: "Citation Recommendations",
-    description: "A system for recommending life-sciences articles for citation.",
-  },
-  {
-    name: "Next Generation Data Systems",
-    description: "Data-exploration research with Harvard's DASlab.",
-  },
-] as const;
-
-export const volunteering = [
-  "TransitMatters · Regional Rail Spring Fellow",
-  "BollyX · Instructor",
-  "BookClub · Co-organizer",
-  "Find the Masks · Contributor",
 ] as const;
