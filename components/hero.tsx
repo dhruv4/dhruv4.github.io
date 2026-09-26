@@ -1,18 +1,11 @@
-import Image from "next/image";
 import { profile } from "@/content/profile";
+import { EasterEggPortrait } from "@/components/easter-egg-portrait";
 
 export function Hero() {
   return (
     <section id="head-section" className="hero" aria-labelledby="page-title">
       <div className="hero__portrait-wrap">
-        <Image
-          className="hero__portrait"
-          src={profile.image}
-          alt="Dhruv Gupta"
-          width={220}
-          height={220}
-          priority
-        />
+        <EasterEggPortrait />
       </div>
       <div className="hero__copy">
         <h1 id="page-title">{profile.name}</h1>
@@ -50,7 +43,9 @@ export function Hero() {
           CEO &amp; Co-Founder at <a href="https://www.drumkit.ai">Drumkit</a>.
         </p>
         <p>Logistics, Technology, and Politics.</p>
-        <p>Harvard, YC Alum.</p>
+        <p>
+          Harvard, YC Alum. <a href={profile.forbes}>Forbes 30 Under 30</a>.
+        </p>
       </div>
     </section>
   );

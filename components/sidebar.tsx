@@ -7,8 +7,6 @@ import { navigation, profile } from "@/content/profile";
 export function Sidebar() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("work");
-  const primary = navigation.filter((item) => !item.group);
-  const highSchool = navigation.filter((item) => item.group === "High School");
 
   useEffect(() => {
     const sections = navigation
@@ -59,9 +57,7 @@ export function Sidebar() {
           </span>
         </a>
         <nav aria-label="Page sections">
-          <div className="sidebar__links">{primary.map(navLink)}</div>
-          <p className="sidebar__label">High School</p>
-          <div className="sidebar__links sidebar__links--nested">{highSchool.map(navLink)}</div>
+          <div className="sidebar__links">{navigation.map(navLink)}</div>
         </nav>
       </aside>
       {open && (
