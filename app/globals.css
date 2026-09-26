@@ -417,7 +417,8 @@ img { max-width: 100%; }
 }
 .modern-hero__lead a, .modern-hero__note a { text-decoration-thickness: 1px; text-underline-offset: 4px; }
 .modern-hero__note { margin: 16px 0 0; color: var(--modern-muted); font-size: .9rem; }
-.modern-hero__links { display: flex; gap: 18px; margin-top: 28px; font-size: .88rem; }
+.modern-hero__location { margin: 5px 0 0; color: var(--modern-muted); font-size: .9rem; }
+.modern-hero__links { display: flex; gap: 18px; margin-top: 26px; font-size: .88rem; }
 .modern-hero__links a { color: var(--modern-muted); text-decoration: none; }
 .modern-hero__links a:hover { color: var(--modern-ink); text-decoration: underline; text-underline-offset: 4px; }
 .modern-hero__portrait .hero__portrait-button { width: 100%; }
@@ -452,15 +453,6 @@ img { max-width: 100%; }
 .modern-plain-list { display: grid; gap: 26px; }
 .modern-plain-list article { display: grid; grid-template-columns: 108px 1fr; gap: 24px; }
 .modern-plain-list--projects article { grid-template-columns: 1fr; }
-.modern-footer {
-  display: flex;
-  padding: 34px 0 64px;
-  border-top: 1px solid var(--modern-line);
-  color: var(--modern-muted);
-  font-size: .8rem;
-}
-.modern-footer p { margin: 0; }
-
 .retro-page { min-height: 100vh; background: #fff; }
 .retro-return {
   position: fixed;

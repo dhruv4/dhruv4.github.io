@@ -7,9 +7,6 @@ export default function Home() {
       <div className="modern-shell">
         <Hero />
         <ModernSections />
-        <footer className="modern-footer">
-          <p>Washington, DC</p>
-        </footer>
       </div>
     </main>
   );

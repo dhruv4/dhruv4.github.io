@@ -13,6 +13,7 @@ export function Hero() {
         <p className="modern-hero__note">
           Harvard and Y Combinator alum. <a href={profile.forbes}>Forbes 30 Under 30</a>.
         </p>
+        <p className="modern-hero__location">Washington, DC</p>
         <nav className="modern-hero__links" aria-label="Contact links">
           <a href={profile.linkedin}>LinkedIn</a>
           <a href={profile.twitter}>X</a>
