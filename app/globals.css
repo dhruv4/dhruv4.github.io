@@ -245,11 +245,9 @@ img { max-width: 100%; }
   height: 205px;
   object-fit: contain;
 }
-.drumkit-wordmark {
-  color: #121212;
-  font-size: clamp(2rem, 5vw, 3.4rem);
-  font-weight: 700;
-  letter-spacing: -.045em;
+.card-image img.drumkit-logo {
+  width: 82%;
+  height: auto;
 }
 .card.medium .card-image img { height: 100%; }
 .card-image.video-container {
@@ -275,18 +273,31 @@ img { max-width: 100%; }
 .card-title.activator:focus-visible, .card-image .activator:focus-visible,
 .collapsible-header:focus-visible { outline: 3px solid rgba(33, 150, 243, .45); outline-offset: -3px; }
 .card-title .material-icons { color: var(--blue); font-family: inherit; font-size: 0 !important; }
-.card-content .card-title .material-icons::after {
-  content: "Details";
-  display: inline-block;
-  padding: 4px 7px;
+.card-content .card-title .material-icons {
+  display: grid;
+  flex: 0 0 28px;
+  place-items: center;
+  width: 28px;
+  height: 28px;
   border: 1px solid #90caf9;
-  border-radius: 999px;
-  font-size: .7rem;
-  font-weight: 600;
-  letter-spacing: .02em;
+  border-radius: 50%;
+}
+.card-content .card-title .material-icons::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin-top: 4px;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  transform: rotate(-135deg);
+}
+.card-reveal .card-title .material-icons::after {
+  content: "×";
+  color: #424242;
+  font-size: 30px;
   line-height: 1;
 }
-.card-reveal .card-title .material-icons::after { content: "×"; color: #424242; }
 .card-content > a, .card-content p a { overflow-wrap: anywhere; }
 .card-reveal {
   position: absolute;
