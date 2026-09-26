@@ -9,7 +9,6 @@ export default function Home() {
         <ModernSections />
         <footer className="modern-footer">
           <p>Washington, DC</p>
-          <a href="#top">Back to top</a>
         </footer>
       </div>
     </main>
