@@ -13,6 +13,11 @@ export function Hero() {
         <p className="modern-hero__note">
           Harvard and Y Combinator alum. <a href={profile.forbes}>Forbes 30 Under 30</a>.
         </p>
+        <nav className="modern-hero__links" aria-label="Contact links">
+          <a href={profile.linkedin}>LinkedIn</a>
+          <a href={profile.twitter}>X</a>
+          <a href={`mailto:${profile.email}`}>Email</a>
+        </nav>
       </div>
       <div className="modern-hero__portrait">
         <EasterEggPortrait />

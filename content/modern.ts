@@ -46,6 +46,12 @@ export const education = [
     detail: "BikePath",
     href: "https://www.ycombinator.com",
   },
+  {
+    year: "2016",
+    school: "Thomas Jefferson High School for Science and Technology",
+    detail: "Alexandria, Virginia",
+    href: "https://www.tjhsst.edu",
+  },
 ] as const;
 
 export const projects = [
