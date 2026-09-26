@@ -105,3 +105,17 @@ export function getArchiveContent(): string {
     source.slice(archiveStart, mainEnd),
   ].join("\n");
 }
+
+export function getFullResumeContent(): string {
+  const source = getSource();
+  const firstSection = source.indexOf('<div id="work"');
+  const mainEnd = source.indexOf("</main>");
+
+  if (firstSection === -1 || mainEnd === -1) {
+    throw new Error("Could not find the full resume in content/resume.html");
+  }
+
+  return source
+    .slice(firstSection, mainEnd)
+    .replaceAll('src="media/', 'src="/media/');
+}

@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Dhruv Gupta",
-  description: "About Dhruv Gupta",
+  description: "Dhruv Gupta is the CEO and Co-Founder of Drumkit.",
   icons: { icon: "/media/dhruv-tie.ico" },
 };
 

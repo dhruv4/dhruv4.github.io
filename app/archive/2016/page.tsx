@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { InteractiveResume } from "@/components/interactive-resume";
-import { getArchiveContent } from "@/lib/content";
+import { RetroHero } from "@/components/retro-hero";
+import { Sidebar } from "@/components/sidebar";
+import { getFullResumeContent } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Time Capsule · Dhruv Gupta",
@@ -11,14 +12,14 @@ export const metadata: Metadata = {
 
 export default function TimeCapsule() {
   return (
-    <main className="archive-page">
-      <header className="archive-header">
-        <p className="archive-eyebrow">CLASSIFIED · 2011–2020</p>
-        <h1>You found the archives.</h1>
-        <p>Built before I knew enough to be embarrassed.</p>
-        <Link href="/">Return to the present →</Link>
-      </header>
-      <InteractiveResume html={getArchiveContent()} />
-    </main>
+    <div className="retro-page">
+      <a className="skip-link" href="#retro-content">Skip to content</a>
+      <Sidebar />
+      <main id="retro-content" className="site-main">
+        <RetroHero />
+        <InteractiveResume html={getFullResumeContent()} />
+      </main>
+      <a className="retro-return" href="/">Return to 2026 →</a>
+    </div>
   );
 }

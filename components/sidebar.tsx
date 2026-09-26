@@ -2,14 +2,16 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { navigation, profile } from "@/content/profile";
+import { profile, retroNavigation } from "@/content/profile";
 
 export function Sidebar() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("work");
+  const primary = retroNavigation.filter((item) => !item.group);
+  const highSchool = retroNavigation.filter((item) => item.group === "High School");
 
   useEffect(() => {
-    const sections = navigation
+    const sections = retroNavigation
       .map((item) => document.getElementById(item.href.slice(1)))
       .filter((section): section is HTMLElement => Boolean(section));
     const observer = new IntersectionObserver(
@@ -25,7 +27,7 @@ export function Sidebar() {
     return () => observer.disconnect();
   }, []);
 
-  const navLink = (item: (typeof navigation)[number]) => (
+  const navLink = (item: (typeof retroNavigation)[number]) => (
     <a
       key={item.href}
       href={item.href}
@@ -57,7 +59,9 @@ export function Sidebar() {
           </span>
         </a>
         <nav aria-label="Page sections">
-          <div className="sidebar__links">{navigation.map(navLink)}</div>
+          <div className="sidebar__links">{primary.map(navLink)}</div>
+          <p className="sidebar__label">High School</p>
+          <div className="sidebar__links sidebar__links--nested">{highSchool.map(navLink)}</div>
         </nav>
       </aside>
       {open && (
