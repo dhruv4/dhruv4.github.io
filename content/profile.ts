@@ -1,10 +1,10 @@
 export const profile = {
   name: "Dhruv Gupta",
-  role: "BD at Zoba",
+  role: "CEO & Co-Founder at Drumkit",
   email: "dhruv4@gmail.com",
   emailLabel: "dhruv4{at}gmail.com",
   linkedin: "https://www.linkedin.com/in/dhruv4",
-  twitter: "https://www.twitter.com/in/iamdhruv4",
+  twitter: "https://x.com/iamdhruv4",
   image: "/media/dhruv-tie.jpg",
 } as const;
 
