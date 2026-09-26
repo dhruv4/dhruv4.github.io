@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!--
+	DJ Share
+	index.html
+	Author: Dhruv Gupta
+	4/20/15
+	Last Updated: 8/12/16
+-->
+<html>
+	<head>
+		<title>DJ Share</title>
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<!--script src="//connect.facebook.net/en_US/all.js"></script-->
+		<script src="js/soundcloud.js"></script>
+		<script src="js/materialize.min.js"></script>
+		<script src="js/jquery.qrcode.min.js"></script>
+		<script src="js/firebase.js"></script>
+		<script src="js/index.min.js"></script>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="Build collaborative playlists and DJ with your friends!">
+	    <meta name="author" content="Dhruv Gupta">
+	    <link rel="stylesheet" href="css/materialize.min.css">
+	    <link rel="stylesheet" href="css/index.css">
+	    <link rel="shortcut icon" href="media/DJShare_Logo.ico">
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-65958100-2', 'auto');
+			ga('send', 'pageview');
+		</script>
+	</head>
+	<body>
+		<!--div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=123424007855134";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script-->
+		<header>
+			<nav>
+				<div class="nav-wrapper orange darken-3">
+					<a href="/" class="brand-logo center"><img id="logo" src="media/DJShare_Logo.png"><h6 class="black-text" style="position: absolute; top: 0; right: -15px;">&beta;</h6></a>
+					<a href="//goo.gl/forms/MR0Etf1HUO" class="right black-text" target="_blank" style="padding-right: 5px;">Report Bugs</a>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div class="container">
+				<div id="join-container">
+					<div class="center">
+						<h4>DJ Share</h4>
+						<h5>Party. Together.</h5>
+					</div>
+					<div class="card">
+						<div class="card-content">
+							<div class="row">
+								<button class="col s12 m6 l4 offset-m3 offset-l4 waves-effect waves-light btn" type="button" id="create-list" onclick="createList()">
+									<i class='mdi-av-playlist-add'></i> Start a Playlist
+								</button>
+							</div>
+							<div class="row">
+								<div class="card col offset-l4 offset-m3 s12 m6 l4 red">
+									<div class="card-content white-text" style="text-align: center;">
+										Or join an existing playlist
+									</div>
+								</div>
+							</div>
+							<div id="join-div" class="row">
+								<div class="input-field col s9 offset-l4 offset-m1 m8 l3">
+									<input type="text" id="id-inp" placeholder="Input Code">
+									<label>Input Code</label>
+								</div>
+								<button class="waves-effect waves-light btn col s3 m2 l1" type="button" id="join-list" onclick="joinList()">Join</button>
+							</div>
+							<div class="row">
+								<label id="code-error" class="col offset-s4 error"></label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="playlist-name" class="row" style="display: none;">
+					<div id="playlist-name-input" class="col s12 m4 input-field">
+						<input type="text" placeholder="Set Playlist Title" onchange="nameChange(this)">
+					</div>
+					<h4 class="col s12 left blue-grey-text" id="playlist-name-head">Playlist Title</h4>
+				</div>
+				<div id="code-card" class="row" style="display: none;">
+					<div class="col s12 m12 l6">
+						<div class="card blue-grey darken-1">
+							<div class="card-content white-text">
+								<span id="isDJ">DJ</span>
+								<span id="qrcode"></span>
+								<span class="card-title">Code to Join</span>
+								<p id="ID-disp"></p>
+								<a target = "_blank" id="twitter-share" class="twitter-share-button"
+								  href="">
+								Share Code to Twitter</a>
+								<!--div id="fb-share" class="fb-share-button" data-href="" data-layout="link"></div-->
+							</div>
+						</div>
+						<h4 id="up-next-name" class="col s12 left blue-grey-text">Up Next</h4>
+						<ul class="collection" id="upnext">
+							<li class='collection-item' value="-1" oncreate='changeList()'>No songs in up next!</li>
+						</ul>
+					</div>
+					<div id="now-playing" class="col s12 m12 l6">
+						<div class="card small">
+							<div class="card-image">
+								<img id="now-img" src="media/blank-album.png">
+								<span class="card-title">Now Playing</span>
+							</div>
+							<div class="card-content">
+								<p id="now-title"></p>
+								<p id="now-artist"></p>
+								<div id="music-control" class="row">
+									<button class="waves-effect waves-light btn blue" type="button" id="play-playlist" onclick="playPlaylist()"><i class='mdi-av-play-circle-fill'></i></button>
+									<button disabled class="waves-effect waves-light btn red disabled" type="button" id="pause-playlist" onclick="pauseSong()"><i class='mdi-av-pause-circle-fill'></i></button>
+									<button disabled class="waves-effect waves-light btn red disabled" type="button" id="stop-playlist" onclick="stopSong()"><i class='mdi-av-stop'></i></button>
+									<button disabled class="waves-effect waves-light btn blue disabled" type="button" id="next-playlist" onclick="nextSong()"><i class='mdi-av-skip-next'></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+				<div id="search-div" style="display: none;">
+					<div class="row">
+						<div class="col s10 l8 m10 input-field">
+							<input type="text" id="search-inp" placeholder="Search Soundcloud">
+							<label>Search Soundcloud</label>
+						</div>
+						<button class="col s2 l4 m2 waves-effect waves-light btn" type="button" id="search" onclick="search()">
+							<i class='mdi-action-search'></i>
+						</button>
+					</div>
+					<ul class="collection" id="search-results">
+					</ul>
+				</div>
+				<div id="dj-modal" class="modal">
+					<div class="modal-content">
+						<h4>First time?</h4>
+						<div class="slider">
+							<ul class="slides">
+								<li>
+									<img src="media/onboarding/djshare_title_cut.gif"> <!-- random image -->
+									<div class="caption center-align">
+										<h5 class="light blue-grey-text text-darken-3">Give your playlist a title</h5>
+									</div>
+								</li>
+								<li>
+									<img src="media/onboarding/djshare_search_cut.gif"> <!-- random image -->
+									<div class="caption left-align">
+										<h5 class="light grey-text text-darken-3">Search up a song</h5>
+									</div>
+								</li>
+								<li>
+									<img src="media/onboarding/djshare_add_cut.gif"> <!-- random image -->
+									<div class="caption left-align">
+										<h5 class="light grey-text text-darken-3">Preview then add the song</h5>
+									</div>
+								</li>
+								<li>
+									<img src="media/onboarding/djshare_play_cut.gif"> <!-- random image -->
+									<div class="caption left-align">
+										<h5 class="light grey-text text-lighten-3">Start playing!</h5>
+									</div>
+								</li>
+								<li>
+									<img src="media/onboarding/djshare_move_cut.gif"> <!-- random image -->
+									<div class="caption left-align">
+										<h5 class="light grey-text text-darken-3">Move songs around</h5>
+									</div>
+								</li>
+								<li>
+									<img src="media/onboarding/djshare_share_cut.gif"> <!-- random image -->
+									<div class="caption left-align">
+										<h5 class="light grey-text text-darken-3">Share with your friends via QR codes, Twitter, or URL</h5>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button class="modal-action modal-close waves-effect waves-light btn">Yup, I got it!</button>
+					</div>
+				</div>
+				<div id="attendee-modal" class="modal">
+					<div class="modal-content">
+						<h4>First time?</h4>
+						<div class="slider">
+							<ul class="slides">
+								<li>
+									<img src="media/onboarding/djshare_search_cut.gif">
+									<div class="caption left-align">
+										<h5 class="light grey-text text-darken-3">Search up a song</h5>
+									</div>
+								</li>
+								<li>
+									<img src="media/onboarding/djshare_add_cut.gif">
+									<div class="caption left-align">
+										<h5 class="light grey-text text-darken-3">Preview then add the song</h5>
+									</div>
+								</li>
+								<li>
+									<img src="media/onboarding/djshare_move_cut.gif">
+									<div class="caption left-align">
+										<h5 class="light grey-text text-darken-3">Move songs around</h5>
+									</div>
+								</li>
+								<li>
+									<img src="media/onboarding/djshare_share_cut.gif">
+									<div class="caption left-align">
+										<h5 class="light grey-text text-darken-3">Share with your friends via QR codes, Twitter, or URL</h5>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button class="modal-action modal-close waves-effect waves-light btn">Yup, I got it!</button>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer style="font-size: 10px; text-align: center;">
+			&copy; <a href="//www.dhruvgupta.me" target="_blank">Dhruv Gupta</a> | Patent Pending
+		</footer>
+	</body>
+</html>

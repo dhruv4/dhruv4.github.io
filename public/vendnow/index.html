@@ -1,0 +1,100 @@
+<html lang="en">
+    <head>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="https://cdn.firebase.com/js/client/2.2.6/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/geofire/3.2.2/geofire.min.js"></script>
+        <script src="rsvp.min.js"></script>
+        <script src="materialize.min.js"></script>
+        <!--script type="text/javascript" src="homepage.js"></script-->
+        <script type="text/javascript" src="homepage.min.js"></script>
+        <link rel="stylesheet" href="css/materialize.min.css">
+        <link rel="stylesheet" href="css/homepage.css" type="text/css">
+        <link rel="shortcut icon" href="/media/VendNow-Icon2.ico">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta name="description" content="Find a vending machine easily! Hungry? Thirsty? Find a snack the right way.">
+        <meta name="author" content="Dhruv Gupta">
+        <meta charset="utf-8">
+        <title>VendNow</title>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-65958100-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </head>
+    <body>
+        <div class="navbar-fixed">    
+            <nav id="header" class="white">
+                <div class="nav-wrapper">
+                    <a href="/" class="brand-logo"><img id="logo" src="/media/VendNow-Logo2.png" style="height: 10vh; max-height: 100%;"><h6 style="position: absolute; left: 250px; top: 0px; color: black; font-size: 18px;">&reg;&beta;</h6></a>
+                    <a href="//goo.gl/forms/Dpy0YzusQz" class="right black-text" target="_blank" style="padding-right: 5px;">Report Bugs</a>
+                </div>
+            </nav>
+        </div>
+
+        <div id="searchForm" class="card">
+            <div id="locForm" name="locForm" class="row">
+                <input type="search" name="address" id="id_address" placeholder="Search near you" class="col s8 l9">
+                <!--button class="col s1 l1 btn-flat" title="Use Current Location" id="cur_loc" type="button">
+                    <i class="large material-icons">my_location</i>
+                </button-->
+                <button class="col s4 l3 waves-effect waves-light btn-large" type="submit" title="Search for Vending Machines" id="find_vends" onclick="searchLocations()">
+                    <i class="material-icons">search</i>
+                </button>
+            </div>
+        </div>
+
+        <div id="gmap" class="row" style="margin: 0;">
+
+            <div id="map-canvas"></div>
+
+            <div id="directionsCard" class="card col l3 offset-s1 s10" style="display: none;">
+                <div id="directionsCardCont" class="card-content"></div>
+            </div>
+
+            <div id="footer" class="col offset-l5" style="position: absolute; bottom: 0;">
+                &copy;2015 &#8226; <a href="//www.dhruvgupta.me">Dhruv Gupta</a>
+                &#8226; Patent Pending
+            </div>
+
+        </div>
+        <div id="review-modal" class="modal bottom-sheet">
+            <div class="modal-content row">
+                <div style="border-bottom: 1px solid grey;">
+                    <h4 id="modal-title">Title</h4>
+                    <h6 id="modal-type">Type</h4>
+                </div>
+                <div id="review-write" class="col s12 m8">
+                    <span class="star-rate">
+                        <i class="mdi-action-star-rate rate" value="1"></i>
+                        <i class="mdi-action-star-rate rate" value="2"></i>
+                        <i class="mdi-action-star-rate rate" value="3"></i>
+                        <i class="mdi-action-star-rate rate" value="4"></i>
+                        <i class="mdi-action-star-rate rate" value="5"></i>
+                    </span>
+                    <br>
+                    <label id="star-error" class="red-text"></label>
+                    <div class="input-field">
+                        <input id="user-name" type="text" class="validate">
+                        <label for="user-name">User Name</label>
+                    </div>
+                    <div class="input-field">
+                        <textarea id="reasoning" class="materialize-textarea validate"></textarea>
+                        <label for="reasoning">Review</label>
+                    </div>
+                    <label id="reasoning-error" class="red-text"></label>
+                    <button id="rate-button" class="modal-action waves-effect waves-light btn right" onclick="rated()">Rate</button>
+                </div>
+                <div id="review-list" class="col s12 m4">
+                    <span id="no-review">No reviews</span>
+                    <div id="avg-review" style="display: none;"></div>
+                    <ul id="reviews-collection" class="collection" style="display: none;"></ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "firebase": "dj-share",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

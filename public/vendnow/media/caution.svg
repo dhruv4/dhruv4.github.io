@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="600"
+   height="500"
+   id="svg2904"
+   sodipodi:version="0.32"
+   inkscape:version="0.45.1"
+   sodipodi:docname="Nuvola_apps_important_yellow.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   sodipodi:docbase="C:\Documents and Settings\KevinDuke\Desktop">
+  <sodipodi:namedview
+     inkscape:window-height="968"
+     inkscape:window-width="1280"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     guidetolerance="10.0"
+     gridtolerance="10.0"
+     objecttolerance="10.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     inkscape:zoom="0.754"
+     inkscape:cx="293.06862"
+     inkscape:cy="258.80621"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4"
+     inkscape:current-layer="svg2904" />
+  <metadata
+     id="metadata2950">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs2906">
+    <linearGradient
+       id="Grad1"
+       x1="41.1948738"
+       y1="616.477173"
+       x2="118.931351"
+       y2="527.555115"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(4.556763,0,0,-4.315033,37.49756,2758.519)">
+      <stop
+         offset="0"
+         id="stop2909"
+         style="stop-color:#f2b600;stop-opacity:1;" />
+      <stop
+         offset="1"
+         id="stop2911"
+         style="stop-color:#f29600;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       id="Grad2"
+       x1="530.809509"
+       y1="486.631012"
+       x2="529.85413"
+       y2="487.53238"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.960006,0,0,0.960006,22.29079,4.4825252)">
+      <stop
+         offset="0"
+         id="stop2914"
+         style="stop-color:#d88500;stop-opacity:1;" />
+      <stop
+         offset="1"
+         id="stop2916"
+         style="stop-color:#fc3;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       id="Grad3"
+       x1="187.873566"
+       y1="224.598923"
+       x2="581.837463"
+       y2="483.100006"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.960006,0,0,0.960006,-530.75961,251.16687)">
+      <stop
+         offset="0"
+         id="stop2919"
+         style="stop-color:#ffd657;stop-opacity:1;" />
+      <stop
+         offset="1"
+         id="stop2921"
+         style="stop-color:#f2b600;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       id="Grad4"
+       x1="250.398453"
+       y1="101.536331"
+       x2="412.094299"
+       y2="264.54187"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.960006,0,0,0.960006,-532.08587,273.71329)">
+      <stop
+         offset="0"
+         id="stop2924"
+         style="stop-color:#fff1c5;stop-opacity:1;" />
+      <stop
+         offset="1"
+         id="stop2926"
+         style="stop-color:#fc3;stop-opacity:1;" />
+    </linearGradient>
+    <radialGradient
+       id="Grad5"
+       cx="512.86597"
+       cy="-10.558988"
+       r="179.550003"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.14292e-8,1.531256,-0.876504,-2.165967e-5,462.7486,-245.0023)"
+       fx="512.86597"
+       fy="-10.558988">
+      <stop
+         offset="0"
+         stop-color="#ffffff"
+         id="stop2929" />
+      <stop
+         offset="0.5"
+         stop-color="#ffffff"
+         id="stop2931" />
+      <stop
+         offset="1"
+         stop-color="#d5d5d5"
+         id="stop2933" />
+    </radialGradient>
+  </defs>
+  <path
+     d="M 294.2423,29.214809 C 294.2423,29.214809 34.080703,456.41731 34.080703,456.41731 C 29.088703,464.57741 29.088703,474.65751 34.080703,482.81751 C 38.976703,490.88161 48.192803,495.96961 58.176803,495.96961 L 578.4999,495.96961 C 588.388,495.96961 597.604,490.88161 602.5961,482.81751 C 607.4921,474.65751 607.4921,464.57741 602.5961,456.41731 L 342.4345,29.214809 C 337.4425,21.054809 328.2265,15.966709 318.3384,15.966709 C 308.4503,15.966709 299.2343,21.054809 294.2423,29.214809 z "
+     style="opacity:1;fill:#a8a0a0;fill-opacity:1;stroke:#fff7f7;stroke-width:4.19999981;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="path4535" />
+  <path
+     d="M 275.5863 23.03565 C 275.5863 23.03565 15.42473 450.2381 15.42473 450.2381 C 10.4327 458.3982 10.4327 468.4783 15.42473 476.6383 C 20.32076 484.7024 29.53681 489.7904 39.52087 489.7904 L 559.8439 489.7904 C 569.732 489.7904 578.948 484.7024 583.9401 476.6383 C 588.8361 468.4783 588.8361 458.3982 583.9401 450.2381 L 323.7785 23.03565 C 318.7865 14.8756 309.5705 9.787568 299.6824 9.787568 C 289.7943 9.787568 280.5783 14.8756 275.5863 23.03565 z "
+     style="fill:url(#Grad1);stroke:#000000;stroke-opacity:1;stroke-width:4.2;stroke-miterlimit:4;stroke-dasharray:none;opacity:1;"
+     id="path2937" />
+  <path
+     d="M 288.57834,460.53816 C 276.13968,454.5807 266.66684,440.25601 266.66684,427.40401 C 266.66684,403.47399 291.67263,385.44784 315.33145,392.32277 C 331.29212,396.96089 342.14011,411.36418 342.00721,427.74123 C 341.89378,441.65299 335.87249,451.90127 323.58194,459.10126 C 314.17403,464.61236 298.43371,465.25835 288.57834,460.53816 z M 291.40544,366.04599 C 289.85056,365.19152 286.18847,362.21632 283.26796,359.43452 C 273.06348,349.71509 273.07619,349.8006 266.42438,245.8027 C 260.51126,153.35598 260.46236,151.9195 262.99963,145.27888 C 268.70759,130.33832 281.42601,123.79606 302.60296,124.90707 C 316.06393,125.61343 326.43088,130.34066 333.16944,138.84549 C 338.92535,146.10985 340.17671,150.21652 340.17146,161.82212 C 340.1658,174.4336 332.10956,329.0917 330.96442,338.56937 C 329.46508,350.98233 322.2177,361.05572 311.59518,365.49104 C 305.52511,368.02582 295.50907,368.30116 291.40544,366.04599 z "
+     id="path2947" />
+</svg>
