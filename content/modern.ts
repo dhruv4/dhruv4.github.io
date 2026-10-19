@@ -35,10 +35,10 @@ export const work = [
 
 export const education = [
   {
-    year: "2016",
-    school: "Thomas Jefferson High School for Science and Technology",
-    detail: "Alexandria, Virginia",
-    href: "https://www.tjhsst.edu",
+    year: "S20",
+    school: "Y Combinator",
+    detail: "BikePath",
+    href: "https://www.ycombinator.com",
   },
   {
     year: "2020",
@@ -47,10 +47,10 @@ export const education = [
     href: "https://www.harvard.edu",
   },
   {
-    year: "S20",
-    school: "Y Combinator",
-    detail: "BikePath",
-    href: "https://www.ycombinator.com",
+    year: "2016",
+    school: "Thomas Jefferson High School for Science and Technology",
+    detail: "Alexandria, Virginia",
+    href: "https://www.tjhsst.edu",
   },
 ] as const;
 
