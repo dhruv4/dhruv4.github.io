@@ -399,8 +399,7 @@ img { max-width: 100%; }
   grid-template-columns: 1fr 112px;
   gap: 64px;
   align-items: center;
-  min-height: 560px;
-  padding: 120px 0 112px;
+  padding: 104px 0 68px;
 }
 .modern-hero h1 {
   margin: 0;
@@ -510,7 +509,7 @@ img { max-width: 100%; }
 
 @media (max-width: 760px) {
   .modern-shell { width: min(100% - 36px, 760px); }
-  .modern-hero { grid-template-columns: 1fr 82px; gap: 24px; min-height: 500px; padding: 80px 0 88px; }
+  .modern-hero { grid-template-columns: 1fr 82px; gap: 24px; padding: 72px 0 60px; }
   .modern-hero__note { max-width: 320px; }
   .modern-section { padding: 44px 0 54px; }
   .modern-work-row, .modern-plain-list article { grid-template-columns: 82px 1fr; gap: 14px; }
